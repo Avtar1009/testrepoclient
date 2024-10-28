@@ -9,9 +9,11 @@ app.use(cors()); // Enable CORS
 const { connect } = require("./Server/db.js");
 const formRouter = require("./Controller/formcontroller.js");
 const uptRouter = require("./Controller/uptcontroller.js");
+const adminRouter=require("./Controller/adminController.js")
 
 app.use("/feedback", formRouter);
 app.use("/sendSms", uptRouter);
+app.use("/createAdmin",adminRouter)
 
 const port = 5000;
 app.listen(port, async () => {
